@@ -8,4 +8,6 @@ npm install
 
 node ace serve --watch
 
-node build
+
+node ace build --production
+
