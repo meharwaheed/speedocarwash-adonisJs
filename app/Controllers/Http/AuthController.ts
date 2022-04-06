@@ -1,6 +1,6 @@
 import { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import User from "App/Models/User";
-import Database from "@ioc:Adonis/Lucid/Database";
+// import Database from "@ioc:Adonis/Lucid/Database";
 import { schema, rules } from '@ioc:Adonis/Core/Validator';
 export default class AuthController {
   public async login({ request, auth }: HttpContextContract) {
@@ -30,7 +30,7 @@ export default class AuthController {
     return token.toJSON();
   }
 
-  private async validate(request:object) {
+  private async validate(request:Object) {
     await request.validate({
       schema: schema.create({
         name: schema.string({ trim: true }),
@@ -38,7 +38,7 @@ export default class AuthController {
         email: schema.string({ trim: true }, [
           rules.unique({ table: 'users', column: 'email' })
         ])    
-      })
+      }),
       messages: {
         'name.required': '{{ field }} is required',
         'email.unique': 'Account with this email is already exists',
