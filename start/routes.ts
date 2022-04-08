@@ -31,10 +31,7 @@ Route.group(() => {
 
   // Auth Api routes
   Route.group(() => {
-    Route.resource("posts", "PostsController").apiOnly();
-    Route.resource("forums", "ForumsController").apiOnly();
-    Route.get("users/forums", "UsersController.forumsByUser");
-    Route.get("users/posts", "UsersController.postsByUser");
+    Route.resource("rates", "RatesController").apiOnly();
   }).middleware("auth:api");
 
 }).prefix("api");
