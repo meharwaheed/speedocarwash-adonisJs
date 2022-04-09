@@ -32,7 +32,6 @@ Route.group(() => {
   // Auth Api routes
   Route.group(() => {
     Route.resource("rates", "RatesController").apiOnly();
-  });
-  // .middleware("auth:api");
+  }).middleware("auth:api");
 
 }).prefix("api");
