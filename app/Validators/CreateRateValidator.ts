@@ -2,7 +2,7 @@ import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class CreateRateValidator {
-  constructor(protected ctx: HttpContextContract) {}
+  constructor(protected ctx: HttpContextContract) { }
 
   /*
    * Define schema to validate the "shape", "type", "formatting" and "integrity" of data.
@@ -27,8 +27,8 @@ export default class CreateRateValidator {
     title: schema.string({ trim: true }),
     price: schema.number(),
     image: schema.file({
-      size: '0.5mb',
-      extnames: ['jpg', 'gif', 'png', 'jpeg', 'web'],
+      size: '20mb',
+      extnames: ['jpg', 'gif', 'png', 'jpeg', 'web', 'svg'],
     }),
     description: schema.string({ trim: true, }, [rules.maxLength(400)]),
   });
