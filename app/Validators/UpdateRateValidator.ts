@@ -26,10 +26,10 @@ export default class CreateRateValidator {
   public schema = schema.create({
     title: schema.string({ trim: true }),
     price: schema.number(),
-    photo: schema.file({
-      size: '20mb',
-      extnames: ['jpg', 'gif', 'png', 'jpeg', 'web', 'svg'],
-    }),
+    // photo: schema.file({
+    //   size: '20mb',
+    //   extnames: ['jpg', 'gif', 'png', 'jpeg', 'web', 'svg'],
+    // }),
     description: schema.string({ trim: true, }, [rules.maxLength(400)]),
   });
 
@@ -47,8 +47,8 @@ export default class CreateRateValidator {
   public messages = {
     'title.required': '{{ field }} is required',
     'price.required': '{{ field }} is required',
-    'photo.required': '{{ field }} is required',
-    'photo.file': '{{ field }} must b a image',
+    // 'photo.required': '{{ field }} is required',
+    // 'photo.file': '{{ field }} must b a image',
     'price.number': '{{ field }} must be a valid number',
     'description.required': '{{ field }} is required',
   }
